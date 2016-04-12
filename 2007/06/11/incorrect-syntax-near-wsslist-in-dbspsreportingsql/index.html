@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+
+
+ <html class="no-js"> 
+<head>
+    <title>Incorrect syntax near &#39;WSSList&#39; in dbSPSReporting.sql &middot; Kale Davis</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="http://kale.github.io/hugo-test/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/tomorrow.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Lora:400,700,400italic" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    
+    <div class="off-canvas">
+    <figure class="avatar">
+        <img src="http://kale.github.io/hugo-test/img/avatar.jpg" title="">
+    </figure>
+    <div class="bio">
+        
+        
+    </div>
+    <nav>
+
+        
+
+        
+
+        <ul>
+            <li><a target="_blank" href="http://kale.github.io/hugo-test/index.xml">RSS feed</a></li>
+        </ul>
+
+        
+
+        <ul>
+        
+        </ul>        
+    </nav>
+</div>
+
+
+    <div class="site-wrapper">
+        <header>
+	<div class="h-wrap">
+		
+		<h1 class="title"><a href="http://kale.github.io/hugo-test/">Kale Davis</a></h1>
+		
+		<a class="menu-icon" title="Menu"><span class="lines"></span></a>
+	</div>
+</header>
+        
+        <section class="single-wrap">
+            <article class="single-content" itemscope itemtype="//schema.org/BlogPosting">
+                <div class="feat">
+                    <h5 class="page-date">
+                    <time datetime="" itemprop="datePublished">
+                    11. June 2007
+                    </time>
+                    </h5>
+                </div>
+                <h1 class="page-title" itemprop="name headline">Incorrect syntax near &#39;WSSList&#39; in dbSPSReporting.sql</h1>
+                <div itemprop="articleBody">
+                    <p>Have you tried to use the <a href="http://www.microsoft.com/downloads/details.aspx?familyid=d81722ce-408c-4fb6-a429-2a7ecd62f674&amp;displaylang=en">SQL Server 2005 Report Pack for SPS</a>? I had used the previous version of this for SQL 2000 last year, but hadn&rsquo;t used it for a while. I remember having issues with the install of that previous version, and sure enough I had more issues this time as well.</p>
+
+<p>Here is the error message you will see when you run the dbSPSReporting.sql script:</p>
+
+<pre><code>Msg 102, Level 15, State 1, Procedure usp_Insert_FactWSS, Line 57 Incorrect syntax near 'WSSList'.
+Cannot add rows to sys.sql_dependencies for the stored procedure because it depends on the missing
+table 'usp_Insert_FactWSS'. The stored procedure will still be created; however, it cannot be
+successfully executed until the table exists.
+</code></pre>
+
+<p>The problem is there is a missing comma after WSSDoc nvarchar(255):</p>
+
+
+Create table dbo.tblTempWSS_ToFactLoad ( WSSFactID bigint identity not null Primary Key, 
+  SiteGUID uniqueidentifier, WebGUID uniqueidentifier, -- WSSDate datetime, -- Fix for 
+  Bug #: 403546 WSSDate smalldatetime, WSSTime nvarchar(8), --WSSUser nvarchar(150), --Fix 
+  for Bug #: 403546 WSSUser nvarchar(255), --WSSDoc nvarchar(50), --Fix for Bug #: 403546 
+  WSSDoc nvarchar(255) WSSList uniqueidentifier
+
+
+<p>Simply add the comma before you run the SQL script and everything will work fine. I find it very ironic that the new bug is right below the &ldquo;Fix for Bug&rdquo; comment that dealt with the previous problems in the first version. Bugs often introduce other bugs, but you would think something released for a Windows administrator would be checked a little closer. </p>
+
+                </div>
+                <div class="feat share">
+                    <a href="//twitter.com/share" class="popup">
+                        <span class="icon-twitter"></span>
+                    </a>
+                </div>
+                
+                
+
+                
+                    <a rel="next" href="http://kale.github.io/hugo-test/2007/10/21/links-some-favorite-sites-vol-1/" id="next">
+                        <span class="nav-title nav-title-next"></span> &rarr;
+                    </a>
+                
+                
+                    <a rel="prev" href="http://kale.github.io/hugo-test/2007/03/15/the-exception-unknown-software-exception/" id="prev">
+                        &larr; <span class="nav-title nav-title-prev"></span>
+                    </a>
+                
+            </article>
+        </section>
+
+        <footer>
+	
+</footer>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://kale.github.io/hugo-test/js/main.js"></script>
+
+
+
+
+<!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

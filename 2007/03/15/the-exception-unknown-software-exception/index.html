@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+
+
+ <html class="no-js"> 
+<head>
+    <title>The exception unknown software exception (a.k.a. SysFader) &middot; Kale Davis</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="http://kale.github.io/hugo-test/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/tomorrow.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Lora:400,700,400italic" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    
+    <div class="off-canvas">
+    <figure class="avatar">
+        <img src="http://kale.github.io/hugo-test/img/avatar.jpg" title="">
+    </figure>
+    <div class="bio">
+        
+        
+    </div>
+    <nav>
+
+        
+
+        
+
+        <ul>
+            <li><a target="_blank" href="http://kale.github.io/hugo-test/index.xml">RSS feed</a></li>
+        </ul>
+
+        
+
+        <ul>
+        
+        </ul>        
+    </nav>
+</div>
+
+
+    <div class="site-wrapper">
+        <header>
+	<div class="h-wrap">
+		
+		<h1 class="title"><a href="http://kale.github.io/hugo-test/">Kale Davis</a></h1>
+		
+		<a class="menu-icon" title="Menu"><span class="lines"></span></a>
+	</div>
+</header>
+        
+        <section class="single-wrap">
+            <article class="single-content" itemscope itemtype="//schema.org/BlogPosting">
+                <div class="feat">
+                    <h5 class="page-date">
+                    <time datetime="" itemprop="datePublished">
+                    15. March 2007
+                    </time>
+                    </h5>
+                </div>
+                <h1 class="page-title" itemprop="name headline">The exception unknown software exception (a.k.a. SysFader)</h1>
+                <div itemprop="articleBody">
+                    <blockquote>
+<p><strong>Update 7/10/07</strong>: kerwin left a comment about a new KB article and hotfix that Microsoft just released.  We tested it yesterday on a machine with both 2003 and 2007 Office components and it seemed to fix the error.  Note that although both the article and hotfix specify WSS 3.0 / MOSS 2007, it also should work with 2.0/2003 (which makes sense, this is a client issue). Thanks kerwin for the information and to all the other people who left helpful comments.</p>
+</blockquote>
+
+<p>You have to enjoy that helpful IE7 error message right?  This past Monday I started getting an error everytime I tried to open an Office document from SharePoint 2003 (to be specific, a WSS 2.0 Team Site).</p>
+
+<p>The exact error was:</p>
+
+<pre><code>SysFader: iexplore.exe - Application Error : The exception unknown software exception (0xc06d007f)
+occurred in the application at location 0x7c812a5b.
+</code></pre>
+
+<p>After some searching, I found only one related link on SharePoint University that was close to what I was seeing.  It wasn&rsquo;t much help and basically said to reload XP, not the solution I was looking for.  I then started looking into the IE7 add-ons (Internet Options -&gt; Programs -&gt; Manage add-ons) and disabled the SharePoint ones I found.  That fixed it! Seems like the SharePoint OpenDocuments Class was causing the error.  With it disabled I was able to open the document, however it reduced the functionality of the drop down by removing the &ldquo;Edit with&hellip;&rdquo; option.</p>
+
+<p>After a search for SharePoint OpenDocuments Class I found the answers in several blogs (Outlook by the sound, Shaune Donohue, and Michael Becker).  The issue is conflicting versions of the OWSSUPP.DLL file because you have both Office11 and Office12 installed.  You can check for these two folders in C:\Program Files\Microsoft Office.  I had both because I had installed Visio and Project 2007 while still running 2003 for the rest of the suite.  I renamed the Office12 version (once I am off of Office 2003 I will change this back) and enabled the add-on and everything works great.
+The funny part is none of these blogs mentioned the error message (maybe they were getting a different one?), so I couldn&rsquo;t find them on my initial search.  Hopefully this post will be the &ldquo;bridge&rdquo; for others who get this annoying error message so that you can find the easy fix.  The only question that remains is what changed to start causing this (I&rsquo;ve had Visio 2007 installed for at least five months).  If I find the answer to that I will update this or if you know please leave a comment.   </p>
+
+                </div>
+                <div class="feat share">
+                    <a href="//twitter.com/share" class="popup">
+                        <span class="icon-twitter"></span>
+                    </a>
+                </div>
+                
+                
+
+                
+                    <a rel="next" href="http://kale.github.io/hugo-test/2007/06/11/incorrect-syntax-near-wsslist-in-dbspsreportingsql/" id="next">
+                        <span class="nav-title nav-title-next"></span> &rarr;
+                    </a>
+                
+                
+                    <a rel="prev" href="http://kale.github.io/hugo-test/2006/12/30/using-crm-with-a-sql-named-instance/" id="prev">
+                        &larr; <span class="nav-title nav-title-prev"></span>
+                    </a>
+                
+            </article>
+        </section>
+
+        <footer>
+	
+</footer>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://kale.github.io/hugo-test/js/main.js"></script>
+
+
+
+
+<!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

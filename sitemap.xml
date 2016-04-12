@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/</loc>
+    <lastmod>2013-09-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2013/09/06/newsletters-newsletters-newsletters/</loc>
+    <lastmod>2013-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2012/11/26/ab-testing-newsletter-landing-pages/</loc>
+    <lastmod>2012-11-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2011/03/30/mailchimp-newsletter-subscriber-count/</loc>
+    <lastmod>2011-03-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2011/03/25/hnl-book-list-vol1/</loc>
+    <lastmod>2011-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2011/03/17/hello-jekyll/</loc>
+    <lastmod>2011-03-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2010/07/21/exporting-data-from-mongohq/</loc>
+    <lastmod>2010-07-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2009/12/23/killing-windows-services-that-hang-on-stopping/</loc>
+    <lastmod>2009-12-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2009/05/26/why-sharepoint-share/</loc>
+    <lastmod>2009-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2009/05/17/sharepoint-twitter-users/</loc>
+    <lastmod>2009-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2008/08/27/vmware-logo-12-signs-you-are-to-big/</loc>
+    <lastmod>2008-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2007/10/21/links-some-favorite-sites-vol-1/</loc>
+    <lastmod>2007-10-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2007/06/11/incorrect-syntax-near-wsslist-in-dbspsreportingsql/</loc>
+    <lastmod>2007-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2007/03/15/the-exception-unknown-software-exception/</loc>
+    <lastmod>2007-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2006/12/30/using-crm-with-a-sql-named-instance/</loc>
+    <lastmod>2006-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kale.github.io/hugo-test/2006/11/06/vim-why-you-should-try-it/</loc>
+    <lastmod>2006-11-06T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>

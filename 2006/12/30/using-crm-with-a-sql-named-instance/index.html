@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+
+
+ <html class="no-js"> 
+<head>
+    <title>Using CRM with a SQL named instance &middot; Kale Davis</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="http://kale.github.io/hugo-test/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/tomorrow.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Lora:400,700,400italic" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    
+    <div class="off-canvas">
+    <figure class="avatar">
+        <img src="http://kale.github.io/hugo-test/img/avatar.jpg" title="">
+    </figure>
+    <div class="bio">
+        
+        
+    </div>
+    <nav>
+
+        
+
+        
+
+        <ul>
+            <li><a target="_blank" href="http://kale.github.io/hugo-test/index.xml">RSS feed</a></li>
+        </ul>
+
+        
+
+        <ul>
+        
+        </ul>        
+    </nav>
+</div>
+
+
+    <div class="site-wrapper">
+        <header>
+	<div class="h-wrap">
+		
+		<h1 class="title"><a href="http://kale.github.io/hugo-test/">Kale Davis</a></h1>
+		
+		<a class="menu-icon" title="Menu"><span class="lines"></span></a>
+	</div>
+</header>
+        
+        <section class="single-wrap">
+            <article class="single-content" itemscope itemtype="//schema.org/BlogPosting">
+                <div class="feat">
+                    <h5 class="page-date">
+                    <time datetime="" itemprop="datePublished">
+                    30. December 2006
+                    </time>
+                    </h5>
+                </div>
+                <h1 class="page-title" itemprop="name headline">Using CRM with a SQL named instance</h1>
+                <div itemprop="articleBody">
+                    <p>If you want to use CRM 3.0 with a named SQL instance you first have to disable the Environmental Diagnostics Wizard (EDW).  How to do this?  I couldn&rsquo;t find a way except for a couple <a title="Mid-Atlantic CRM" href="http://blogs.msdn.com/midatlanticcrm/archive/2006/06/23/Name-your-Instance-SQL-Instance-that-is-in-Microsoft-CRM-3.aspx">blogs</a>/<a title="CRM Newsgroup" href="http://groups.google.com/group/microsoft.public.crm.deployment/browse_thread/thread/31c06c54730988df/a3f41f7a480543d4%23a3f41f7a480543d4">newsgroups</a> pointing me to a support call with Microsoft.  The Microsoft CRM Support Team might not like me posting this simple solution, but I think it is crazy that we got charged a support call for something like this and hopefully my post can prevent someone else from being on hold for two hours.</p>
+
+<p>To disable it, you simply open RegEdit on the CRM server, browse to the MSCRM key at HKEY_LOCAL_MACHINE -&gt; SOFTWARE -&gt; Microsoft -&gt; MSCRM and add the DWORD &ldquo;IgnoreChecks&rdquo; and give a value of 1.</p>
+
+<p>You will have to reinstall CRM on the box and reconfigure what SQL server/instance you want to use there.  You will get to the screen that has the warnings/errors, and the SQL line item will still give you an warning/error, but with the registry edit you can still click the Next button to proceed (without EDW disabled you can&rsquo;t proceed).  After finishing the install you can delete the registry entry you added.</p>
+
+<p><em>As a disclaimer: backup everything, don&rsquo;t do this on your production box, and if you&rsquo;re unsure about any of this call MS support!</em></p>
+
+                </div>
+                <div class="feat share">
+                    <a href="//twitter.com/share" class="popup">
+                        <span class="icon-twitter"></span>
+                    </a>
+                </div>
+                
+                
+
+                
+                    <a rel="next" href="http://kale.github.io/hugo-test/2007/03/15/the-exception-unknown-software-exception/" id="next">
+                        <span class="nav-title nav-title-next"></span> &rarr;
+                    </a>
+                
+                
+                    <a rel="prev" href="http://kale.github.io/hugo-test/2006/11/06/vim-why-you-should-try-it/" id="prev">
+                        &larr; <span class="nav-title nav-title-prev"></span>
+                    </a>
+                
+            </article>
+        </section>
+
+        <footer>
+	
+</footer>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://kale.github.io/hugo-test/js/main.js"></script>
+
+
+
+
+<!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+
+
+ <html class="no-js"> 
+<head>
+    <title>Killing Windows Services that hang on &#34;STOPPING&#34; &middot; Kale Davis</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="http://kale.github.io/hugo-test/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/tomorrow.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Lora:400,700,400italic" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    
+    <div class="off-canvas">
+    <figure class="avatar">
+        <img src="http://kale.github.io/hugo-test/img/avatar.jpg" title="">
+    </figure>
+    <div class="bio">
+        
+        
+    </div>
+    <nav>
+
+        
+
+        
+
+        <ul>
+            <li><a target="_blank" href="http://kale.github.io/hugo-test/index.xml">RSS feed</a></li>
+        </ul>
+
+        
+
+        <ul>
+        
+        </ul>        
+    </nav>
+</div>
+
+
+    <div class="site-wrapper">
+        <header>
+	<div class="h-wrap">
+		
+		<h1 class="title"><a href="http://kale.github.io/hugo-test/">Kale Davis</a></h1>
+		
+		<a class="menu-icon" title="Menu"><span class="lines"></span></a>
+	</div>
+</header>
+        
+        <section class="single-wrap">
+            <article class="single-content" itemscope itemtype="//schema.org/BlogPosting">
+                <div class="feat">
+                    <h5 class="page-date">
+                    <time datetime="" itemprop="datePublished">
+                    23. December 2009
+                    </time>
+                    </h5>
+                </div>
+                <h1 class="page-title" itemprop="name headline">Killing Windows Services that hang on &#34;STOPPING&#34;</h1>
+                <div itemprop="articleBody">
+                    <p>Although rare, sometimes a Windows Service can hang while stopping or restarting. This happened to me yesterday on one of my SharePoint servers and thought I would write-up a quick note in case I ever need it again. In my case the Office SharePoint Search Service had stopped responding and when I tried to restart the service it hung on &ldquo;STOPPING&rdquo;. A reboot would of fixed it, but that isn&rsquo;t an option for a production server usually.</p>
+
+<p>First, find the service name. You can do that by looking at the properties of the particular service in services.msc. Next you can use the <a href="http://technet.microsoft.com/en-us/library/bb490995.aspx">SC</a> command with queryex to find the PID for that service and then use <a href="http://technet.microsoft.com/en-us/library/bb491009.aspx">taskkill</a> to kill the service.</p>
+
+
+sc queryex osearch
+
+taskkill /PID 2056 /F
+
+
+<p><em>Couple notes</em> - the /F flag is for forcing the service to stop. Try it first without the /F. A service hanging on &ldquo;STOPPING&rdquo; is usually a bad sign, so you may want to figure out why this is happening before doing this.</p>
+
+                </div>
+                <div class="feat share">
+                    <a href="//twitter.com/share" class="popup">
+                        <span class="icon-twitter"></span>
+                    </a>
+                </div>
+                
+                
+
+                
+                    <a rel="next" href="http://kale.github.io/hugo-test/2010/07/21/exporting-data-from-mongohq/" id="next">
+                        <span class="nav-title nav-title-next"></span> &rarr;
+                    </a>
+                
+                
+                    <a rel="prev" href="http://kale.github.io/hugo-test/2009/05/26/why-sharepoint-share/" id="prev">
+                        &larr; <span class="nav-title nav-title-prev"></span>
+                    </a>
+                
+            </article>
+        </section>
+
+        <footer>
+	
+</footer>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://kale.github.io/hugo-test/js/main.js"></script>
+
+
+
+
+<!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
